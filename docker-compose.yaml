@@ -1,9 +1,8 @@
 ---
+
 services:
   dropbox:
-#    build: https://github.com/starlinglab/dropbox-docker.git
-    build: ./dockerfile-dropbox/
-
-container_name: dropbox
+    build: "."
+    container_name: dropbox
     volumes:
       - /mnt/volume_tor1_02/dropbox-lab2:/home/dropbox-user
