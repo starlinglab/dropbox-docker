@@ -11,6 +11,7 @@ RUN groupadd -g $HOST_GID dropbox-user && \
     useradd -ms /bin/bash -u $HOST_UID -g $HOST_GID dropbox-user  && \
     mkdir /opt/dropbox && \
     chown $HOST_UID:$HOST_GID /opt/dropbox
+COPY dropbox.sh /opt/dropbox/dropbox.sh
 
 USER dropbox-user
 WORKDIR /home/dropbox-user
@@ -24,4 +25,4 @@ RUN cd /opt/dropbox && \
 
 EXPOSE 17500
 
-ENTRYPOINT ["/opt/dropbox/.dropbox-dist/dropboxd"]
+ENTRYPOINT ["/opt/dropbox/dropbox.sh"]
