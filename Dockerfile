@@ -24,4 +24,4 @@ RUN cd /home/dropbox-user && \
 
 EXPOSE 17500
 
-ENTRYPOINT ["/opt/dropbox/dropbox.sh"]
+ENTRYPOINT ["/bin/bash","/opt/dropbox/dropbox.sh"]
