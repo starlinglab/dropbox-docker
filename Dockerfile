@@ -20,8 +20,7 @@ RUN cd /home/dropbox-user && \
     curl -L "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - &&\
     >&2 echo "Dropbox ver.:" $(cat /opt/dropbox/.dropbox-dist/VERSION) &&\
     curl -L -o dropbox\
-    "https://www.dropbox.com/download?dl=packages/dropbox.py" &&\
-    chmod a+x /opt/dropbox/dropbox.sh
+    "https://www.dropbox.com/download?dl=packages/dropbox.py"
 
 EXPOSE 17500
 
