@@ -16,12 +16,12 @@ COPY dropbox.sh /opt/dropbox/dropbox.sh
 USER dropbox-user
 WORKDIR /home/dropbox-user
 
-RUN cd /opt/dropbox && \
+RUN cd /home/dropbox-user && \
     curl -L "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - &&\
     >&2 echo "Dropbox ver.:" $(cat /opt/dropbox/.dropbox-dist/VERSION) &&\
     curl -L -o dropbox\
     "https://www.dropbox.com/download?dl=packages/dropbox.py" &&\
-    chmod u+x /opt/dropbox/dropbox
+    chmod a+x /opt/dropbox/dropbox.sh
 
 EXPOSE 17500
 
