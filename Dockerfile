@@ -1,8 +1,8 @@
 #Debian implementation of https://github.com/shellbro/dockerfile-dropbox.git
 FROM debian:latest
 
-ARG HOST_UID=1002
-ARG HOST_GID=1002
+ARG HOST_UID=1001
+ARG HOST_GID=1001
 
 RUN apt -y update;\
     apt -y install python python3 curl
